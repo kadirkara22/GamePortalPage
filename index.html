@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./css/fontawesome-all.css" />
     <!--Custom Css-->
     <link rel="stylesheet" href="./css/style.css" />
+    <!--Owl carusel-->
+    <link rel="stylesheet" href="./css/owl.carousel.css" />
+    <link rel="stylesheet" href="./css/owl.theme.default.css" />
     <title>D503 Game Portal</title>
   </head>
   <body>
@@ -91,5 +94,80 @@
       </div>
     </header>
     <!--Header End-->
+    <!-- Main start-->
+    <main role="main">
+      <div class="main-slider owl-carousel owl-theme">
+        <div class="single-slide">
+          <img src="./img/slide_1.jpg" />
+          <div class="slide-overlay">
+            <div class="container">
+              <div class="slide-content">
+                <h2>GAME PORTAL</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Commodi vitae iste vel adipisci, impedit fuga veniam ipsa
+                  molestiae exercitationem delectus dignissimos voluptate iusto
+                  rerum repellendus consequuntur totam. Placeat quia eveniet
+                  quos laboriosam ut. Adipisci, repudiandae excepturi, possimus
+                  sint illo facere, mollitia doloribus accusamus blanditiis
+                  aliquam libero. Veritatis corporis eum consectetur!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-slide">
+          <img src="./img/slide_2.jpg" />
+          <div class="slide-overlay">
+            <div class="container">
+              <div class="slide-content">
+                <h2>GAME PORTAL</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Commodi vitae iste vel adipisci, impedit fuga veniam ipsa
+                  molestiae exercitationem delectus dignissimos voluptate iusto
+                  rerum repellendus consequuntur totam. Placeat quia eveniet
+                  quos laboriosam ut. Adipisci, repudiandae excepturi, possimus
+                  sint illo facere, mollitia doloribus accusamus blanditiis
+                  aliquam libero. Veritatis corporis eum consectetur!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-slide">
+          <img src="./img/slide_3.jpg" />
+          <div class="slide-overlay">
+            <div class="container">
+              <div class="slide-content">
+                <h2>GAME PORTAL</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Commodi vitae iste vel adipisci, impedit fuga veniam ipsa
+                  molestiae exercitationem delectus dignissimos voluptate iusto
+                  rerum repellendus consequuntur totam. Placeat quia eveniet
+                  quos laboriosam ut. Adipisci, repudiandae excepturi, possimus
+                  sint illo facere, mollitia doloribus accusamus blanditiis
+                  aliquam libero. Veritatis corporis eum consectetur!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Main End-->
+
+    <script src="js/jquery-3.6.0.slim.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script>
+      $(document).ready(function () {
+        let owl = $(".owl-carousel").owlCarousel({
+          autoplay: false,
+          dots: false,
+          items: 1,
+        });
+      });
+    </script>
   </body>
 </html>
