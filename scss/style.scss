@@ -1,5 +1,6 @@
 @import "abstracts";
 @import "components";
+@import "animations";
 
 //general Settings
 *,
@@ -23,7 +24,11 @@ body {
   margin: 0 auto;
   width: 100%;
 }
-
+h1 {
+  font-size: 7rem;
+  font-family: $secondary-font;
+  color: $primary-color;
+}
 h2 {
   font-family: $primary-font;
   font-size: 5rem;
@@ -31,7 +36,12 @@ h2 {
   letter-spacing: 0.5rem;
   font-weight: 300;
 }
-
+h4 {
+  font-family: $primary-font;
+  color: $light-color;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
 a {
   text-decoration: none;
   text-transform: uppercase;
@@ -53,11 +63,6 @@ img {
   .container {
     @include flex-display(flex, center, space-between);
     .logo {
-      h1 {
-        font-size: 5rem;
-        font-family: $secondary-font;
-        color: $primary-color;
-      }
     }
 
     .top-social-menu {
@@ -188,6 +193,7 @@ img {
         border-top: 2px solid $primary-color;
         border-bottom: 2px solid $primary-color;
         padding: 10rem 7rem;
+        animation: mainAni 3s ease-out;
         background: linear-gradient(
           to right,
           rgba(0, 0, 0, 0.6),
@@ -244,6 +250,35 @@ img {
         font-size: 2.5rem;
         font-family: $primary-font;
         background: transparent;
+      }
+    }
+  }
+}
+
+/*Latest news*/
+
+.latest-news {
+  display: flex;
+  background-color: $primary-color;
+  height: 8rem;
+  align-items: center;
+
+  &-title {
+    flex-basis: 25%;
+    text-align: right;
+    padding-right: 2rem;
+  }
+  &-content {
+    flex-basis: 75%;
+    height: 100%;
+    background-color: $secondary-color;
+
+    .news-ticker {
+      @include flex-display(flex, center, space-between);
+      line-height: 8rem;
+      p {
+        color: $light-color;
+        font-size: 1.4rem;
       }
     }
   }
