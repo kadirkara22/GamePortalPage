@@ -184,18 +184,25 @@ section {
   padding: 8rem 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Changa", sans-serif;
+  color: #e51515;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
 h1 {
   font-size: 7rem;
-  font-family: "Open Sans", sans-serif;
-  color: #e51515;
 }
 
 h2 {
-  font-family: "Changa", sans-serif;
   font-size: 5rem;
   color: #fefefe;
-  letter-spacing: 0.5rem;
-  font-weight: 300;
 }
 
 h3 {
@@ -203,10 +210,8 @@ h3 {
 }
 
 h4 {
-  font-family: "Changa", sans-serif;
-  color: #fefefe;
-  text-transform: uppercase;
   font-size: 2rem;
+  color: #fefefe;
 }
 
 a {
@@ -591,7 +596,6 @@ img {
   margin-bottom: 1.2rem;
   font-size: 1.8rem;
   letter-spacing: 0;
-  color: #e51515;
 }
 
 .recent-games-content .recent-game-content .game-title a {
@@ -672,5 +676,112 @@ img {
   -ms-grid-row: 2;
   -ms-grid-column: 4;
   grid-area: item-6;
+}
+
+/* lastest  reviewed section*/
+.last-reviewed {
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  background-color: #14151a;
+}
+
+.last-reviewed-detail {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.last-reviewed-image {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#e51515), to(rgba(229, 21, 21, 0.1))), url(../img/game_3.jpg);
+  background-image: linear-gradient(to right bottom, #e51515, rgba(229, 21, 21, 0.1)), url(../img/game_3.jpg);
+  background-size: cover;
+  height: 100%;
+  -webkit-clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Reviews*/
+.review {
+  padding: 5rem;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-left: 10rem;
+  transform: skew(-28deg);
+  -webkit-transform: skew(-28deg);
+  -moz-transform: skew(-28deg);
+  -ms-transform: skew(-28deg);
+  -o-transform: skew(-28deg);
+}
+
+.review > * {
+  transform: skew(28deg);
+  -webkit-transform: skew(28deg);
+  -moz-transform: skew(28deg);
+  -ms-transform: skew(28deg);
+  -o-transform: skew(28deg);
+}
+
+.review-tags {
+  font-size: 1.5rem;
+  color: #fefefe;
+  text-transform: uppercase;
+}
+
+.review-text {
+  margin: 1rem 0;
+}
+
+.review-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.review-user img {
+  width: 8rem;
+  margin-right: 3rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.review-user-detail {
+  font-family: "Changa", sans-serif;
+  margin-right: 3rem;
+}
+
+.review-user-detail .review-user-name {
+  color: #e51515;
+}
+
+.review-user-detail .review-user-date {
+  color: #ffb320;
+}
+
+.review-user-platform :not(:last-child) {
+  color: #e51515;
+}
+
+.review-user-platform .fab {
+  margin: 0 1rem;
+}
+
+.review-user-rating .checked {
+  color: #e51515;
 }
 /*# sourceMappingURL=style.css.map */
