@@ -631,3 +631,352 @@ img {
   //padding: 16px 32px;
   text-transform: uppercase;
 }
+
+// showcase
+.showcase {
+  background-color: $secondary-color;
+
+  &-content {
+    display: flex;
+    overflow: hidden;
+
+    @include media(xlarge) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 25rem);
+    }
+
+    @include media(medium) {
+      grid-template-rows: repeat(2, 20rem);
+    }
+
+    .showcase-item {
+      position: relative;
+      text-align: center;
+      transition: $general-transition;
+
+      &:hover {
+        transform: scale(1.2);
+
+        @include media(xlarge) {
+          transform: scale(1);
+        }
+
+        .item-image:before,
+        .item-content h3,
+        .item-content i,
+        .item-content p {
+          opacity: 1;
+        }
+
+        .item-content h3,
+        .item-content p {
+          transform: translateY(0);
+        }
+      }
+
+      .item-image {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($primary-color, 0.6);
+          opacity: 0;
+          transition: $general-transition;
+        }
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .item-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+
+        h3 {
+          color: $light-color;
+          font-size: 2.2rem;
+          opacity: 0;
+          transition: $general-transition;
+          transform: translateY(-5rem);
+
+          @include media(medium) {
+            font-size: 1.8;
+          }
+        }
+
+        i {
+          font-size: 5rem;
+          margin: 1rem;
+          transition: $general-transition;
+          opacity: 0;
+          &:hover {
+            color: darken($light-color, 20%);
+          }
+
+          @include media(medium) {
+            font-size: 4rem;
+            margin: 0.5rem;
+          }
+        }
+
+        p {
+          transition: $general-transition;
+          color: $light-color;
+          font-size: 1.5rem;
+          opacity: 0;
+          transform: translateY(5rem);
+
+          @include media(medium) {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+/** TEAM SECTION **/
+
+.team-members {
+  display: flex;
+
+  .team-member {
+    width: 100%;
+    height: 100%;
+
+    &:first-child {
+      margin-right: 5rem;
+
+      @include media(large) {
+        margin-right: 3rem;
+      }
+
+      @include media(medium) {
+        margin-right: 1rem;
+      }
+
+      @include media(small) {
+        margin-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-left: 5rem;
+
+      @include media(large) {
+        margin-left: 3rem;
+      }
+
+      @include media(medium) {
+        margin-left: 1rem;
+      }
+
+      @include media(small) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+/** CONTACT SECTION **/
+
+.contact {
+  background-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.9) 100%
+    ),
+    url("../img/contact.jpg");
+  background-size: cover;
+  min-height: 100vh;
+
+  &-content {
+    display: flex;
+    margin-top: 4rem;
+    align-items: center;
+
+    @include media(medium) {
+      flex-direction: column;
+    }
+
+    &-detail {
+      background-color: rgba($primary-color, 0.8);
+      flex: 1;
+      color: $light-color;
+      min-height: 40rem;
+      margin-right: -5rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+      flex-direction: column;
+
+      @include media(medium) {
+        width: 90%;
+        min-height: 30rem;
+        margin-right: 0;
+      }
+
+      h3 {
+        color: $light-color;
+        margin-bottom: 3rem;
+      }
+
+      ul {
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2rem;
+
+          i {
+            margin-right: 2rem;
+          }
+
+          p {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+
+    &-form {
+      background-color: rgba($secondary-color, 0.8);
+      flex: 2;
+      min-height: 50rem;
+      display: flex;
+      align-items: center;
+
+      @include media(medium) {
+        width: 90%;
+        min-height: 40rem;
+      }
+
+      form {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        input,
+        textarea {
+          width: 60%;
+          padding: 1rem;
+          border: none;
+          text-transform: uppercase;
+          font-family: inherit;
+          font-size: 1.4rem;
+          display: block;
+          color: $light-color;
+        }
+
+        input:focus,
+        textarea:focus {
+          outline: none;
+          border-bottom: 1px solid $light-color;
+        }
+
+        :not(:last-child) {
+          margin-bottom: 3rem;
+          background-color: transparent;
+          border-bottom: 1px solid $primary-color;
+        }
+
+        textarea {
+          resize: none;
+        }
+
+        input[type="submit"] {
+          background-color: $light-color;
+          color: $primary-color;
+          cursor: pointer;
+          transition: $general-transition;
+
+          &:hover {
+            background-color: $primary-color;
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+}
+/** FOOTER SECTION **/
+
+footer {
+  background-color: $secondary-color;
+  height: 6rem;
+  font-family: $primary-font;
+
+  @include media(medium) {
+    height: 4rem;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @include media(medium) {
+      flex-direction: column-reverse;
+    }
+
+    .copyright {
+      flex: 1;
+      height: 100%;
+
+      p {
+        line-height: 6rem;
+        font-size: 2.4rem;
+
+        @include media(medium) {
+          line-height: 4rem;
+          font-size: 1.8rem;
+        }
+      }
+    }
+
+    .down-social-link {
+      flex: 1;
+      background-color: pink;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .fc,
+      .yt,
+      .tw {
+        line-height: 6rem;
+        width: 100%;
+        text-align: center;
+        font-size: 2.4rem;
+
+        @include media(medium) {
+          line-height: 4rem;
+          font-size: 1.8rem;
+        }
+      }
+
+      .fc {
+        background-color: #4b5496;
+      }
+
+      .tw {
+        background-color: #6799ed;
+      }
+
+      .yt {
+        background-color: #d92424;
+      }
+    }
+  }
+}
